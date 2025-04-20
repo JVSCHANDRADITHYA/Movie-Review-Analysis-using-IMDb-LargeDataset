@@ -57,6 +57,7 @@ custom_btn = """
 """
 st.markdown(custom_btn, unsafe_allow_html=True)
 
+
 # Prediction
 if st.button("🎯 Analyze Review"):
     if review.strip() == "":
@@ -76,11 +77,26 @@ if st.button("🎯 Analyze Review"):
         })
 
         # Display results
-        st.markdown(f"### Sentiment: <span style='color:lime'>{label}</span>", unsafe_allow_html=True)
+        sentiment_color = "lime" if sentiment == 1 else "red"
+        st.markdown(
+            f"### Sentiment: <span style='color:{sentiment_color}; font-weight:bold;'>{label}</span>",
+            unsafe_allow_html=True
+    )   
 
         # Rating slider
         st.markdown("### Predicted Rating")
-        st.slider("Model says rating is:", min_value=1.0, max_value=10.0, value=rating, step=0.1, disabled=True)
+        st.markdown("<h3 style='color:#FFD700; font-weight:bold;'>🎯 Predicted Rating</h3>", unsafe_allow_html=True)
+
+        # Disabled slider (just for visual display)
+        st.slider(
+            label="",
+            min_value=1.0,
+            max_value=10.0,
+            value=rating,
+            step=0.1,
+            disabled=True
+        )
+
 
         # Star rating
         full_stars = int(round(rating))
