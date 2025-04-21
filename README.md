@@ -28,7 +28,7 @@ Built using **Logistic Regression** for sentiment classification and **Linear Re
 
 ## 🚀 Features
 
-- Sleek UI with background image, IMDb branding and intuitive layout
+- Sleek UI, IMDb branding and intuitive layout
 - Dynamic star rating and rating slider
 - Stores a mini history of predictions
 - Styled sentiment labels: **green for positive**, **red for negative**
